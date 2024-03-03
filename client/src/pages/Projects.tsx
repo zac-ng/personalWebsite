@@ -1,6 +1,8 @@
+import { Center } from "@chakra-ui/react";
+
 const Projects = () => {
     return (
-      <>Projects</>
+      <Center>Projects</Center>
     );
   };
   

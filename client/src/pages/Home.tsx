@@ -3,11 +3,11 @@ import { Center, Heading, Text, Flex, Button, Icon, SlideFade, Fade } from "@cha
 import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 
 const Home = () => (
-  <Center minH="100vh" flexDirection="column">
+  <Center minH="80vh" flexDirection="column">
     <SlideFade in offsetY={30} transition={{ enter: { duration: 2 } }}>
       <Heading size="2xl" mb={4}>Zachary Nguyen</Heading>
     </SlideFade>
-    <Fade in transition={{ enter: { delay: 1.5, duration: 1.5 } }}>
+    <Fade in transition={{ enter: { delay: 1, duration: 1.5 } }}>
       <Center flexDirection="column">
         <Text fontSize="lg" mb={6}>Student, developer, croissant enthusiast</Text>
         <Flex justifyContent="center">
