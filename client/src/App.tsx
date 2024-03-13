@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { ChakraProvider, Fade } from "@chakra-ui/react";
 import Home from "./pages/Home";
 import About from "./pages/About";
@@ -21,7 +21,7 @@ export const App = () => {
       </Fade>
       {page === "home" && <Home />}
       {page === "about" && <About />}
-      {page === "project" && <Projects />}
+      {page === "projects" && <Projects />}
       {page === "experience" && <Experience />}
     </ChakraProvider>
   );
