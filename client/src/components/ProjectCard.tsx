@@ -1,36 +1,48 @@
-import { Heading, Text, Button, Image, Stack, Card, CardBody, CardFooter } from "@chakra-ui/react";
+import { Heading, Text, Image, Stack, Card, Flex, Box } from "@chakra-ui/react";
+import { ReactNode } from "react";
 
 interface ProjectCardProps {
   imageName: string;
   title: string;
   description: string;
-  buttons?: {
-    label: string;
-    colorScheme?: string;
-    href?: string;
-    onClick?: () => void;
-  }[];
+  buttons?: ReactNode[];
 }
 
 const ProjectCard = ({ imageName, title, description, buttons }: ProjectCardProps) => {
   return (
-    <Card direction={{ base: 'column', sm: 'row' }} overflow="hidden" variant="outline">
-      <Image
-        objectFit="cover"
-        maxW={{ base: '100%', sm: '200px' }}
-        src={`/projectImages/${imageName}`}
-        alt={title}
-        m={4}
-      />
-
-      <Stack p={4} spacing={4}>
-        <Heading as="h2" size="md">{title}</Heading>
-        <Text>{description}</Text>
-        {buttons && buttons.map((button, index) => (
-          <Button key={index} colorScheme={button.colorScheme} as="a" href={button.href} target="_blank" onClick={button.onClick}>{button.label}</Button>
-        ))}
-      </Stack>
-    </Card>
+    <Box
+      border="1px solid #E2E8F0"
+      borderRadius="lg"
+      overflow="hidden"
+      transition="box-shadow 0.3s ease"
+      _hover={{ boxShadow: "md" }}
+    >
+      <Card minH="40vh" direction={{ base: 'column', sm: 'row' }} overflow="hidden" variant="outline">
+        <Stack direction={{ base: 'column', sm: 'row' }} spacing={4} flex={1} alignItems="center">
+          <Image
+            objectFit="cover"
+            maxW="150px"
+            maxH="150px"
+            src={`/projectImages/${imageName}`}
+            alt={title}
+            m={4}
+          />
+          <Stack p={4} spacing={4} flex={1}>
+            <Heading as="h2" size="md">{title}</Heading>
+            <Text>{description}</Text>
+            {buttons && (
+              <Flex justifyContent="flex-end">
+                {buttons.map((button, index) => (
+                  <Flex key={index} alignItems="center" ml={2}>
+                    {button}
+                  </Flex>
+                ))}
+              </Flex>
+            )}
+          </Stack>
+        </Stack>
+      </Card>
+    </Box>
   );
 };
 
