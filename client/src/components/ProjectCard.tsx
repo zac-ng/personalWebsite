@@ -14,15 +14,16 @@ interface ProjectCardProps {
 
 const ProjectCard = ({ imageName, title, description, buttons }: ProjectCardProps) => {
   return (
-    <Card p={4} direction={{ base: 'column', sm: 'row' }} overflow="hidden" variant="outline">
+    <Card direction={{ base: 'column', sm: 'row' }} overflow="hidden" variant="outline">
       <Image
         objectFit="cover"
         maxW={{ base: '100%', sm: '200px' }}
         src={`/projectImages/${imageName}`}
         alt={title}
+        m={4}
       />
 
-      <Stack p="6" spacing="4">
+      <Stack p={4} spacing={4}>
         <Heading as="h2" size="md">{title}</Heading>
         <Text>{description}</Text>
         {buttons && buttons.map((button, index) => (
