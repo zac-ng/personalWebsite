@@ -1,7 +1,7 @@
-import { Heading, Grid, GridItem, Button } from "@chakra-ui/react";
+import { Box, Heading, Grid, GridItem, Button, Image } from "@chakra-ui/react";
 import { FaFilePdf, FaExternalLinkAlt } from "react-icons/fa";
-import ProjectCard from "../components/ProjectCard";
 import GithubButton from "../components/GithubButton";
+import ProjectComponent from "../components/ProjectComponent";
 
 const cardHeight = "40vh";
 
@@ -11,7 +11,7 @@ const Projects = () => {
       <Heading textAlign="center" mb={6}>Projects</Heading>
       <Grid templateColumns={{ base: '1fr', md: '1fr 1fr' }} gap="24" m="24">
         <GridItem minH={cardHeight}>
-          <ProjectCard
+          <ProjectComponent
             imageName="noteshare.png"
             title="Noteshare"
             description="Noteshare is a file-sharing platform for effortless electronic note sharing."
@@ -21,7 +21,7 @@ const Projects = () => {
           />
         </GridItem>
         <GridItem minH={cardHeight}>
-          <ProjectCard
+          <ProjectComponent
             imageName="devicon.png"
             title="Chakra Devicon Package"
             description="Custom Icon Library for Chakra UI built on top of Devicon."
@@ -39,7 +39,7 @@ const Projects = () => {
           />
         </GridItem>
         <GridItem minH={cardHeight}>
-          <ProjectCard
+          <ProjectComponent
             imageName="flimble.png"
             title="Flimble"
             description="Flimble is a browser based VPS Terminal providing a effortless VPS management system."
@@ -49,7 +49,7 @@ const Projects = () => {
           />
         </GridItem>
         <GridItem minH={cardHeight}>
-          <ProjectCard
+          <ProjectComponent
             imageName="clink.png"
             title="Clink"
             description="The Clink application is a social media app aimed at augmenting their drinking experience."
@@ -59,7 +59,7 @@ const Projects = () => {
           />
         </GridItem>
         <GridItem minH={cardHeight}>
-          <ProjectCard
+          <ProjectComponent
             imageName="asdet.png"
             title="Azure Security Data Exploration Toolset"
             description="ASDET provides a toolset to programmatically discover security threats and anomalies."
@@ -78,7 +78,7 @@ const Projects = () => {
           />
         </GridItem>
         <GridItem minH={cardHeight}>
-          <ProjectCard
+          <ProjectComponent
             imageName="vocalStyleTransfer.png"
             title="Vocal Style Transfer"
             description="Leveraging Pix2PixGAN for vocal style translation. Presented at STAR Symposium."
@@ -102,6 +102,31 @@ const Projects = () => {
               </Button>
             ]}
           />
+        </GridItem>
+        <GridItem minH="100vh">
+          <ProjectComponent 
+            imageName="vocalStyleTransfer.png"
+            title="Vocal Style Transfer"
+            description="Leveraging Pix2PixGAN for vocal style translation. Presented at STAR Symposium."
+            buttons={[
+              <Button 
+                colorScheme="blue" 
+                as="a" 
+                leftIcon={<FaExternalLinkAlt />}
+                href="https://issuu.com/pennonihonorscollege2016/docs/2020_abstract_booklet_web_version/58" target="_blank"
+              >
+                Abstract
+              </Button>,
+              <Button
+                as="a"
+                href="/files/vocalStyleTranslation.pdf"
+                target="_blank"
+                colorScheme="blue"
+                leftIcon={<FaFilePdf />}
+              >
+                Poster
+              </Button>
+            ]}/>
         </GridItem>
       </Grid>
     </>
