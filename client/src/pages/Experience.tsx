@@ -1,4 +1,4 @@
-import { Center } from "@chakra-ui/react";
+import { Center, Heading, Link, Text } from "@chakra-ui/react";
 import { Chrono } from 'react-chrono';
 
 const Experience = () => {
@@ -30,9 +30,45 @@ const Experience = () => {
     ];
 
     return (
-        <Center>
-            <Chrono items={workExperienceTimeline} mode="VERTICAL_ALTERNATING" />
-        </Center>
+        <>
+            <Heading textAlign="center" mt="5vh" mb={12}>Experience</Heading>
+            <Center mb={12}>
+                <Text maxW="70%">
+                Follow my professional journey through the field of Computer Science!
+                I have held a wide variety of roles, ranging from machine learning research at my university,
+                to working on security toolset for blue team analysts, to building data pipelines for autonomous
+                vehicles, to building an insurance pre-authorization using ChatGPT. I have learned a lot throughout
+                my career, and I hope to learn a lot more in my future roles! If you are interested in hiring
+                me, or what a deeper look at my work take a look at my resume <Link href="/resume.pdf" color="blue.500" target="_blank" rel="noopener noreferrer">here</Link>.
+
+                </Text>
+            </Center>
+            <Center mb={12}>
+                <Chrono 
+                    items={workExperienceTimeline} 
+                    mode="VERTICAL_ALTERNATING"
+                    disableToolbar={true}
+                    disableClickOnCircle={true}
+                    activeItemIndex={4}
+                    borderLessCards={true}
+                    disableAutoScrollOnClick={true}
+                    disableContentClick={true}
+                    disableInteraction={true}
+                    theme={{
+                        primary: '#FFA500',
+                        titleColor: '#FFA500',
+                        cardTitleColor: '#FFA500',
+                    }}
+                    fontSizes={{
+                        cardSubtitle: '1rem',
+                        cardText: '1rem',
+                        cardTitle: '1.2rem',
+                        title: '1.2rem',
+                    }}
+                    style={{ marginBottom: "2rem" }}
+                />
+            </Center>
+        </>
     );
 };
 

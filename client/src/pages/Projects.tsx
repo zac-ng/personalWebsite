@@ -8,7 +8,7 @@ const cardHeight = "40vh";
 const Projects = () => {
   return (
     <>
-      <Heading textAlign="center" mb={6}>Projects</Heading>
+      <Heading textAlign="center" mt="5vh" mb={6}>Projects</Heading>
       <Grid templateColumns={{ base: '1fr', md: '1fr 1fr' }} gap="24" m="24">
         <GridItem minH={cardHeight}>
           <ProjectComponent
