@@ -1,7 +1,9 @@
-import { Center, Heading, Link, Text } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
+import { Center, Heading, Link, Text, useColorModeValue, useColorMode } from "@chakra-ui/react";
 import { Chrono } from 'react-chrono';
 
 const Experience = () => {
+
     const workExperienceTimeline = [
         {
             title: "June - Sept 2023",
@@ -29,6 +31,20 @@ const Experience = () => {
         },
     ];
 
+    /* 
+        React chrono will not change color when Chakra UI color switcher is activated
+        We can still use ChakraColorValue, but we need to force a rerender
+        We can force a rerender by updating key. Issue describing solution can be found below
+        https://github.com/prabhuignoto/react-chrono/issues/143
+    */
+    const { colorMode } = useColorMode();
+
+    const [colorModeKey, setColorModeKey] = useState(0);
+
+    useEffect(() => {
+        setColorModeKey((prevKey) => prevKey + 1);
+    }, [colorMode]);
+
     return (
         <>
             <Heading textAlign="center" mt="5vh" mb={12}>Experience</Heading>
@@ -40,7 +56,6 @@ const Experience = () => {
                 vehicles, to building an insurance pre-authorization using ChatGPT. I have learned a lot throughout
                 my career, and I hope to learn a lot more in my future roles! If you are interested in hiring
                 me, or what a deeper look at my work take a look at my resume <Link href="/resume.pdf" color="blue.500" target="_blank" rel="noopener noreferrer">here</Link>.
-
                 </Text>
             </Center>
             <Center mb={12}>
@@ -54,10 +69,16 @@ const Experience = () => {
                     disableAutoScrollOnClick={true}
                     disableContentClick={true}
                     disableInteraction={true}
+                    enableDarkToggle={true}
+                    useReadMore={false}
                     theme={{
-                        primary: '#FFA500',
-                        titleColor: '#FFA500',
-                        cardTitleColor: '#FFA500',
+                        primary: useColorModeValue("#FFA500", "#FFA500"),
+                        titleColor: useColorModeValue("#FFA500", "#FFA500"),
+                        cardTitleColor: useColorModeValue("#FFA500", "#FFA500"),
+                        cardBgColor: useColorModeValue("white", "#1A202C"),
+                        cardSubtitleColor: useColorModeValue("#1A202C", "#EDF2F7"),
+                        cardDetailsColor: useColorModeValue("#1A202C", "#EDF2F7"),
+                        cardOutline: "darkblue",
                     }}
                     fontSizes={{
                         cardSubtitle: '1rem',
@@ -65,7 +86,7 @@ const Experience = () => {
                         cardTitle: '1.2rem',
                         title: '1.2rem',
                     }}
-                    style={{ marginBottom: "2rem" }}
+                    key={colorModeKey}
                 />
             </Center>
         </>
