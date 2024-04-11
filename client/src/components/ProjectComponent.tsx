@@ -20,7 +20,7 @@ import {
 interface ProjectComponentProps {
   title: string;
   description: string;
-  imageName: string;
+  imageNames: string[];
   tags?: string[];
   buttons?: ReactNode[];
 }
@@ -28,13 +28,13 @@ interface ProjectComponentProps {
 const ProjectComponent = ({
   title,
   description,
-  imageName,
+  imageNames,
   tags,
   buttons,
 }: ProjectComponentProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [isHovered, setIsHovered] = useState(false);
-  const hoverBgColor = useColorModeValue("orange.300", "orange.300");
+  const hoverBgColor = useColorModeValue("#FFC581", "orange.300");
   const defaultBgColor = useColorModeValue("blackAlpha.100", "whiteAlpha.100");
 
   return (
@@ -52,13 +52,18 @@ const ProjectComponent = ({
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <Image
-          src={`/projectImages/${imageName}`}
-          alt={title}
-          maxH="50%"
-          borderRadius="lg"
-          boxShadow="lg"
-        />
+        {/* Render all images in a horizontal line with spacing */}
+        {imageNames.map((imageName, index) => (
+          <Image
+            key={index}
+            src={`/projectImages/${imageName}`}
+            alt={title}
+            maxH="50%"
+            borderRadius="lg"
+            boxShadow="lg"
+            mr={2} // Adjust spacing between images
+          />
+        ))}
         <Box
           position="absolute"
           top={0}
@@ -74,7 +79,7 @@ const ProjectComponent = ({
           opacity={isHovered ? 0.6 : 0}
           transition="opacity 0.3s ease-in-out"
         >
-          <Text fontSize="xl" fontWeight="bold" color="white">
+          <Text fontSize="xl" fontWeight="bold" color="orange.900" opacity={1}>
             {title}
           </Text>
         </Box>
@@ -94,13 +99,18 @@ const ProjectComponent = ({
               bg={defaultBgColor}
             >
               <ModalCloseButton />
-              <Image
-                src={`/projectImages/${imageName}`}
-                alt={title}
-                maxH="50%"
-                borderRadius="lg"
-                boxShadow="lg"
-              />
+              {/* Render all images in a horizontal line with spacing */}
+              {imageNames.map((imageName, index) => (
+                <Image
+                  key={index}
+                  src={`/projectImages/${imageName}`}
+                  alt={title}
+                  maxH="50%"
+                  borderRadius="lg"
+                  boxShadow="lg"
+                  mr={2} // Adjust spacing between images
+                />
+              ))}
             </Box>
             <Flex justifyContent="space-between" alignItems="center" mb={4}>
               <Heading fontSize="2xl">{title}</Heading>
