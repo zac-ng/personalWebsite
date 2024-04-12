@@ -6,7 +6,7 @@ import Projects from "./pages/Projects";
 import Experience from "./pages/Experience";
 import Navbar from "./components/Navbar";
 import { extendTheme } from "@chakra-ui/react";
-import { useState } from "react";
+import NotFound from "./pages/NotFound";
 
 const config = {
   initialColorMode: "light",
@@ -16,6 +16,7 @@ const config = {
 const theme = extendTheme({ config });
 
 export const App = () => {
+
   return (
     <ChakraProvider theme={theme}>
       <Router>
@@ -27,6 +28,7 @@ export const App = () => {
           <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/experience" element={<Experience />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
     </ChakraProvider>
