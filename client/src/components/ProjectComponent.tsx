@@ -34,7 +34,7 @@ const ProjectComponent = ({
 }: ProjectComponentProps) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const [isHovered, setIsHovered] = useState(false);
-  const hoverBgColor = useColorModeValue("#FFC581", "orange.300");
+  const hoverBgColor = useColorModeValue("#FFC581", "orange.400");
   const defaultBgColor = useColorModeValue("blackAlpha.100", "whiteAlpha.100");
 
   return (
@@ -52,7 +52,6 @@ const ProjectComponent = ({
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        {/* Render all images in a horizontal line with spacing */}
         {imageNames.map((imageName, index) => (
           <Image
             key={index}
@@ -61,7 +60,7 @@ const ProjectComponent = ({
             maxH="50%"
             borderRadius="lg"
             boxShadow="lg"
-            mr={2} // Adjust spacing between images
+            mr={2}
           />
         ))}
         <Box
@@ -99,7 +98,6 @@ const ProjectComponent = ({
               bg={defaultBgColor}
             >
               <ModalCloseButton />
-              {/* Render all images in a horizontal line with spacing */}
               {imageNames.map((imageName, index) => (
                 <Image
                   key={index}
@@ -108,7 +106,7 @@ const ProjectComponent = ({
                   maxH="50%"
                   borderRadius="lg"
                   boxShadow="lg"
-                  mr={2} // Adjust spacing between images
+                  mr={2}
                 />
               ))}
             </Box>

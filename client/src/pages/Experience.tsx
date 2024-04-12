@@ -87,7 +87,7 @@ const Experience = () => {
                         title: '1.2rem',
                     }}
                     key={colorModeKey}
-                />
+                ></Chrono>
             </Center>
         </>
     );
