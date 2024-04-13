@@ -22,7 +22,8 @@ const Projects = () => {
         <GridItem minH={cardHeight}>
           <ProjectComponent
             imageNames={["flimble.png"]}
-            title="Flimble - VPS Management System"
+            hoveredTitle="Flimble - VPS Management System"
+            modalTitle="Flimble"
             description="Flimble is a browser based VPS Terminal providing a effortless
              VPS management system. Users can create an account to access their own personal
              VPS all within the comfort of their browser. Flimble features automatic 
@@ -36,7 +37,8 @@ const Projects = () => {
         <GridItem minH={cardHeight}>
           <ProjectComponent
             imageNames={["clinkLogin.png", "clinkHome.png", "clinkCard.png"]}
-            title="Clink - Cocktail Recommendation App"
+            hoveredTitle="Clink - Cocktail Recommendation App"
+            modalTitle="Clink"
             description="The Clink application is a social media app aimed at 
             users who want to either find a place to start drinking or to augment 
             their current drinking experience. Clink leverages an existing database of drinks 
@@ -52,7 +54,8 @@ const Projects = () => {
         <GridItem minH={cardHeight}>
           <ProjectComponent
             imageNames={["asdet.png"]}
-            title="Azure Security Data Exploration Toolset"
+            hoveredTitle="Azure Security Data Exploration Toolset"
+            modalTitle="Azure Security Data Exploration Toolset"
             description="ASDET, the Azure Sentinel Data Exploration Toolset, is a collection 
             of Python modules within Jupyter notebooks aimed at simplifying the analysis 
             of large datasets in Azure Sentinel. It assists security analysts by helping 
@@ -77,7 +80,8 @@ const Projects = () => {
         <GridItem minH={cardHeight}>
           <ProjectComponent
             imageNames={["vocalStyleTransfer.png"]}
-            title="Vocal Style Transfer Research"
+            hoveredTitle="Vocal Style Transfer Research"
+            modalTitle="Vocal Style Transfer Research"
             description="This research project focuses on investigating the potential of Pix2Pix, a generative adversarial network (GAN), to preform vocal style translation. Unlike previous efforts focusing on voice synthesis, this project aims to translate audio from one speaker to another using paired audio sources.
             "
             buttons={[
@@ -105,7 +109,8 @@ const Projects = () => {
         <GridItem minH={cardHeight}>
           <ProjectComponent
             imageNames={["noteshare.png"]}
-            title="Noteshare - File Sharing Platform"
+            hoveredTitle="Noteshare - File Sharing Platform"
+            modalTitle="Noteshare"
             description="Noteshare is a platform that allows users to share notes and other files remotely with other users. Primarily focused on sharing class notes, it features several search parameters implemented to help find relevant files such as subject, date, teacher, or other tags. Users can upload files to the database assigning various tags such as subject, file name, date, teacher, etc which can then be queried."
             buttons={[
               <GithubButton url="https://github.com/zac-ng/noteshare" />
@@ -116,7 +121,8 @@ const Projects = () => {
         <GridItem minH={cardHeight}>
           <ProjectComponent
             imageNames={["devicon.png"]}
-            title="Chakra UI Devicon NPM Package"
+            hoveredTitle="Chakra UI Devicon NPM Package"
+            modalTitle="Chakra UI Devicon NPM Package"
             description="Custom Icon Library for Chakra UI built on top of Devicon.
             Chakra UI's default icon library is missing a lot of common icons. This
             library focuses on providing a more comprehensive supplement to the icons 

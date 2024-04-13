@@ -18,7 +18,8 @@ import {
 } from "@chakra-ui/react";
 
 interface ProjectComponentProps {
-  title: string;
+  hoveredTitle: string;
+  modalTitle: string;
   description: string;
   imageNames: string[];
   tags?: string[];
@@ -26,7 +27,8 @@ interface ProjectComponentProps {
 }
 
 const ProjectComponent = ({
-  title,
+  hoveredTitle,
+  modalTitle,
   description,
   imageNames,
   tags,
@@ -56,11 +58,13 @@ const ProjectComponent = ({
           <Image
             key={index}
             src={`/projectImages/${imageName}`}
-            alt={title}
+            alt={modalTitle}
             maxH="50%"
+            w="auto"
             borderRadius="lg"
             boxShadow="lg"
             mr={2}
+            flexShrink={0}
           />
         ))}
         <Box
@@ -79,7 +83,7 @@ const ProjectComponent = ({
           transition="opacity 0.3s ease-in-out"
         >
           <Text fontSize="xl" fontWeight="bold" color="orange.900" opacity={1}>
-            {title}
+            {hoveredTitle}
           </Text>
         </Box>
       </Box>
@@ -102,16 +106,18 @@ const ProjectComponent = ({
                 <Image
                   key={index}
                   src={`/projectImages/${imageName}`}
-                  alt={title}
+                  alt={modalTitle}
                   maxH="50%"
+                  w="auto"
                   borderRadius="lg"
                   boxShadow="lg"
                   mr={2}
+                  flexShrink={0}
                 />
               ))}
             </Box>
             <Flex justifyContent="space-between" alignItems="center" mb={4}>
-              <Heading fontSize="2xl">{title}</Heading>
+              <Heading fontSize="2xl">{modalTitle}</Heading>
               {tags && (
                 <Flex>
                   {tags.map((tag, index) => (
