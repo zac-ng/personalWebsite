@@ -4,7 +4,7 @@ import { FaGithub, FaLinkedin, FaEnvelope } from "react-icons/fa";
 const Home = () => (
   <Center minH="65vh" flexDirection="column">
     <SlideFade in offsetY={30} transition={{ enter: { duration: 2 } }}>
-      <Image src="/dog.svg" alt="dog" boxSize="150px" mb={-6} />
+      <Image src="dog.svg" alt="dog" boxSize="150px" mb={-6} />
     </SlideFade>
     <SlideFade in offsetY={30} transition={{ enter: { duration: 2 } }}>
       <Heading size="2xl" mb={6}>Zachary Nguyen</Heading>

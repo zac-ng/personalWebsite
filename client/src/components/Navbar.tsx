@@ -12,7 +12,7 @@ const Navbar = () => {
         {currentPage !== "" && (
           <Link as={RouterLink} to="/">
             <HStack>
-              <Image src="/dog.svg" alt="Dog Logo" boxSize="50px" mr={2} />
+              <Image src="dog.svg" alt="Dog Logo" boxSize="50px" mr={2} />
               <Heading size="md">Zachary Nguyen</Heading>
             </HStack>
           </Link>

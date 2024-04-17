@@ -57,7 +57,7 @@ const ProjectComponent = ({
         {imageNames.map((imageName, index) => (
           <Image
             key={index}
-            src={`/projectImages/${imageName}`}
+            src={`${process.env.PUBLIC_URL}/projectImages/${imageName}`}
             alt={modalTitle}
             maxH="50%"
             w="auto"
